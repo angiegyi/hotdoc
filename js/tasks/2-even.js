@@ -6,5 +6,5 @@
  * @returns {Boolean} Whether the input is even.
  */
 export default function isNumberEven(i) {
-
+	return i % 2 == 0;
 }
