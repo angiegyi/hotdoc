@@ -6,5 +6,10 @@
  * @returns {String} The file extension (with no period), or false if there is none.
  */
 export default function getFileExtension(filename) {
+	// tokenise the string - divides string into two sections before and after the .
+	const parsedFileName = filename.split(".");
 
+	// if the string does not have a ., we know its not a file name
+	// otherwise, return the file extension (last element in array)
+	return parsedFileName.length === 1 ? false : parsedFileName.pop();
 }
