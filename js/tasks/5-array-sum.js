@@ -6,5 +6,15 @@
  * @returns {Number} The sum of all integers contained in the input, at any level.
  */
 export default function arraySum(startOfTree) {
-
+	let total = 0;
+	const sum = startOfTree
+		.flat(Infinity)
+		.reduce(
+			(previousValue, currentValue) =>
+				Number.isInteger(currentValue)
+					? previousValue + currentValue
+					: previousValue,
+			total
+		);
+	return sum;
 }
