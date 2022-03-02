@@ -6,5 +6,9 @@
  * @returns {String} The longest string from within the input array.
  */
 export default function longestString(strings) {
-    
+	return strings.reduce((prevString, currString) =>
+		typeof currString === "string" && currString.length > prevString.length
+			? currString
+			: prevString
+	);
 }
